@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AspnetCoreMvcFull.Models;
 using AspnetCoreMvcFull.Models.ViewModels;
@@ -7,12 +7,12 @@ using AspnetCoreMvcFull.Data;
 
 namespace AspnetCoreMvcFull.Controllers;
 
-public class FormLayoutsController : Controller
+public class CustomerController : Controller
 {
 
     private readonly ApplicationContext _context;
-    
-    public FormLayoutsController( ApplicationContext context)
+
+    public CustomerController(ApplicationContext context)
     {
         _context = context;
     }
@@ -31,7 +31,7 @@ public class FormLayoutsController : Controller
         {
             _context.Add(NewType);
             await _context.SaveChangesAsync();
-            return RedirectToAction("CustomerType", "FormLayouts");
+            return RedirectToAction("CustomerRig", "FormLayouts");
         }
 
 
@@ -40,26 +40,29 @@ public class FormLayoutsController : Controller
 
     }
 
-    public IActionResult Ticket() => View();
+    public IActionResult CustomerRig() => View();
 
 
 
     [HttpPost]
-    public async Task<IActionResult> Ticket(TicketModel model)
+    public async Task<IActionResult> CustomerRig(CustomerRig model)
     {
-        var NewTicket = new Tickets() { TicketAmount = model.TicketAmount, TicketName =model.TicketName,
-        TicketDescription = model.TicketDescription,
+        var NewCustomerRig = new CustomerRig()
+        {
+            Name =model. CustomerRigName,
+            Phone =model. CustomerRigPhone,
+            Address = model.CustomerRigAddress,
         };
         if (ModelState.IsValid)
         {
-            _context.Add(NewTicket);
+            _context.Add(NewCustomerRig);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Basic", "Tables");
+            return RedirectToAction("AddCustomer", "Customer");
         }
         return View();
     }
 
 
 
-        }
+}
 

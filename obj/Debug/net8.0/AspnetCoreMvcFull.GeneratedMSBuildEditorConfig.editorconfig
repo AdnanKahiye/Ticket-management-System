@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZHNcQmFzaWMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/KCT/OneDrive/Desktop/Tick/Ticket-management-System/Ticket-management-System/Views/Customer/AddCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQWRkQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/KCT/OneDrive/Desktop/Tick/Ticket-management-System/Ticket-management-System/Views/Dashboards/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,6 +48,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/KCT/OneDrive/Desktop/Tick/Ticket-management-System/Ticket-management-System/Views/ExtendedUi/TextDivider.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXh0ZW5kZWRVaVxUZXh0RGl2aWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/KCT/OneDrive/Desktop/Tick/Ticket-management-System/Ticket-management-System/Views/FormLayouts/CustomerRig.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybUxheW91dHNcQ3VzdG9tZXJSaWcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/KCT/OneDrive/Desktop/Tick/Ticket-management-System/Ticket-management-System/Views/FormLayouts/CustomerType.cshtml]
