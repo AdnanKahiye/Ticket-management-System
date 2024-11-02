@@ -6,8 +6,13 @@
 
 <div class="container mt-5">
     <div class="card shadow-lg p-5 rounded-lg border-0">
-        <h3 class="text-center text-primary mb-4"><i class="fas fa-ticket-alt me-2"></i> New Customer Type</h3>
-        <hr class="mb-4">
+        <h3 class="card-header d-flex justify-content-between align-items-center">
+            New Customer Type
+            <a asp-controller="Tables" asp-action="CusType" class="btn btn-primary mb-2">Back To List</a>
+            
+        </h3>
+
+       
 
         <form method="post" asp-action="CustomerType" asp-controller="FormLayouts">
             <!-- Ticket Details Section -->
@@ -15,21 +20,27 @@
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <label asp-for="Customtype" class="form-label font-weight-bold"></label>
-                        <input type="text" asp-for="Customtype" class="form-control rounded-pill border-primary shadow-sm" id="ticketName" placeholder="Enter ticket name">
+                        <input type="text" asp-for="Customtype" class="form-control rounded-pill border-primary shadow-sm" id="ticketName" placeholder="Enter Customer Type">
                     </div>
                     <div class="col-md-6 mb-4">
                         <label asp-for="CustomDescription" class="form-label font-weight-bold"></label>
-                        <input asp-for="CustomDescription" type="text" class="form-control rounded-pill border-primary shadow-sm" id="amount" placeholder="Enter amount">
+                        <input asp-for="CustomDescription" type="text" class="form-control rounded-pill border-primary shadow-sm" id="amount" placeholder="Enter Description">
                     </div>
                 </div>
+
          
 
                 <!-- Submit Button -->
                 <div class="text-center mt-5">
-                    <button type="submit" class="btn btn-primary px-5 py-2 rounded-pill shadow-sm w-100">
-                        <i class="fas fa-paper-plane me-2"></i> Submit
+                    <button type="submit" class="btn btn-primary mb-2">
+                         Submit
+                    </button>
+                      <div class="text-center mt-5">
+                        <button type="reset" class="btn btn-warning mb-2">
+                           Reset 
                     </button>
                 </div>
+
             </div>
         </form>
     </div>

@@ -8,7 +8,7 @@
 
 <div class="card">
     <h5 class="card-header d-flex justify-content-between align-items-center">
-        Ticket List
+        CustomerType Lists
         <a asp-controller="FormLayouts" asp-action="CustomerType" class="btn btn-primary px-4">Add New Customer Type</a>
     </h5>
     <div class="table-responsive text-nowrap">
@@ -28,7 +28,8 @@
                         <td>@custype.CustomDescription</td>
                         <td>
                             <a asp-controller="Tables" asp-action="EditCustom" asp-route-id="@custype.CustomerId" class="btn btn-warning btn-sm">Edit</a>
-                            <a asp-controller="Tables" asp-action="DeleteCustom" asp-route-id="@custype.CustomerId" class="btn btn-danger btn-sm">Delete</a>
+                            <a onclick="confirmDelete('@custype.CustomerId')" class="btn btn-danger btn-sm">Delete</a>
+
                         </td>
                     </tr>
                 }
@@ -36,4 +37,12 @@
         </table>
     </div>
 </div>
-<!--/ Basic Bootstrap Table -->
+<!--/ java script to confar delete -->
+<script>
+    function confirmDelete(customerId) {
+        if (confirm("Are you sure you want to delete this customertype?")) {
+            // If the user confirms, navigate to the delete action with the customer ID
+            window.location.href = `/Tables/CusType?id=${customerId}`;
+        }
+    }
+</script>

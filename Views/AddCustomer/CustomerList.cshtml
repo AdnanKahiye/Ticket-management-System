@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Basic Tables - Tables";
+}
+
+
+
+<h5 class="card-header d-flex justify-content-between align-items-center">
+    Customer Lists
+    <a asp-controller="AddCustomer" asp-action="AddCustomer" class="btn btn-primary px-4">Customer Regigtration </a>
+</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>CusType</th>
+            <th>Address</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Id</td>
+                <td>@customer.Name</td>
+                <td>@customer.Phone</td>
+                <td>@customer.CusType</td>
+                <td>@customer.Address</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@customer.Id" class="btn btn-primary">Edit</a>
+                    <a href="javascript:void(0);" onclick="openDeleteModal('@Url.Action("Delete", "DeleteCus", new { id = customer.Id })')" class="btn btn-danger">Delete</a>
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<!--Delte script-->
+<script>
+    let deleteUrl = '';
+
+    function openDeleteModal(url) {
+        deleteUrl = url;  // Store the delete URL
+        $('#deleteModal').modal('show');  // Show the modal
+    }
+
+    // Handle the confirm delete button
+    $('#confirmDeleteBtn').on('click', function () {
+        $.ajax({
+            url: deleteUrl,
+            type: 'POST',
+            success: function (result) {
+                $('#deleteModal').modal('hide');  // Close the modal
+                location.reload();  // Reload the page to reflect deletion
+            },
+            error: function (err) {
+                alert("There was an error deleting the customer.");
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+

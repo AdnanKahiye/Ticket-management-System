@@ -31,7 +31,7 @@ public class FormLayoutsController : Controller
         {
             _context.Add(NewType);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Basic", "FormLayouts");
+            return RedirectToAction("CustomerType", "FormLayouts");
         }
 
 

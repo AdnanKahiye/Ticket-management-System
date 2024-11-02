@@ -1,0 +1,60 @@
+﻿
+
+@{
+    ViewData["Title"] = "Add Customer";
+}
+@model AddCustomerModel
+@* Enhanced Add Customer Form *@
+<h1 class="text-center text-primary my-4">Add New Customer</h1>
+
+<div class="card shadow-lg mx-auto" style="max-width: 600px; padding: 2rem; border-radius: 12px; background-color: #f9fafb;">
+    <form asp-action="AddCustomer" method="post">
+        <!-- Customer Name -->
+        <div class="form-group mb-4">
+            <label asp-for="Name" class="form-label" style="font-weight: bold;">
+                <i class="bi bi-person-fill text-primary"></i> Customer Name
+            </label>
+            <input asp-for="Name" class="form-control form-control-lg border-primary" placeholder="Enter full name" />
+            <span asp-validation-for="Name" class="text-danger small"></span>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group mb-4">
+            <label asp-for="Phone" class="form-label" style="font-weight: bold;">
+                <i class="bi bi-telephone-fill text-primary"></i> Phone Number
+            </label>
+            <input asp-for="Phone" class="form-control form-control-lg border-primary" placeholder="Enter phone number" />
+            <span asp-validation-for="Phone" class="text-danger small"></span>
+        </div>
+        <!-- CustomerType-->
+        <div class="form-group mb-4">
+            <label asp-for="CusType" class="form-label" style="font-weight: bold;">
+                <i class="bi bi-geo-alt-fill text-primary"></i> CustomerTpye
+            </label>
+            <input asp-for="CusType" class="form-control form-control-lg border-primary" placeholder="Enter CustomerType" />
+            <span asp-validation-for="CusType" class="text-danger small"></span>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group mb-4">
+            <label asp-for="Address" class="form-label" style="font-weight: bold;">
+                <i class="bi bi-geo-alt-fill text-primary"></i> Address
+            </label>
+            <input asp-for="Address" class="form-control form-control-lg border-primary" placeholder="Enter address" />
+            <span asp-validation-for="Address" class="text-danger small"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 8px;">
+                <i class="bi bi-plus-circle-fill"></i> Submit
+            </button>
+            </div>
+            <div class="d-grid">
+                <button type="reset" class="btn btn-warning mb-2" style="border-radius: 8px;">
+                    Reset
+                </button>
+        </div>
+    </form>
+</div>
+

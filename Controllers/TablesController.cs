@@ -4,6 +4,7 @@ using AspnetCoreMvcFull.Models;
 using Microsoft.EntityFrameworkCore;
 using AspnetCoreMvcFull.Data;
 using AspnetCoreMvcFull.Models.ViewModels;
+using AspnetCoreMvcFull.Models.Entities;
 
 namespace AspnetCoreMvcFull.Controllers;
 
@@ -43,46 +44,13 @@ public class TablesController : Controller
             CustomerId = CustomTyp.CustomerId,
             Customtype = CustomTyp.Customtype,
             CustomDescription = CustomTyp.CustomDescription,
-            
+
 
 
         };
 
         return View(CustomeTy);
     }
-
-
-
-
-
-    [HttpPost]
-    [AutoValidateAntiforgeryToken]
-    public async Task<IActionResult> EditCustom(CutomerTypeModel model)
-    {
-        if (!ModelState.IsValid)
-        {
-            return View(model); // Return view with validation errors
-        }
-
-        // Retrieve the existing subject from the database
-        var existingSubject = await _context.customerTypes.FindAsync(model.CustomerId);
-        if (existingSubject == null)
-        {
-            return NotFound();
-        }
-
-        // Update properties
-        existingSubject.CustomerId = model.CustomerId;
-        existingSubject.Customtype = model.Customtype;
-        existingSubject.CustomDescription = model.CustomDescription;
-        // Save changes to the database
-        _context.Update(existingSubject);
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction("Index", "Home");
-    }
-
-
 
     //Editing Method
 
@@ -98,10 +66,10 @@ public class TablesController : Controller
         var Ticket = new TicketModel
         {
             TicketId = ticket.TicketId,
-            TicketName= ticket.TicketName,
+            TicketName = ticket.TicketName,
             TicketAmount = ticket.TicketAmount,
             TicketDescription = ticket.TicketDescription,
-          
+
         };
 
         return View(Ticket);
@@ -137,7 +105,7 @@ public class TablesController : Controller
         _context.Update(existingSubject);
         await _context.SaveChangesAsync();
 
-        return RedirectToAction("Index" ,"Home");
+        return RedirectToAction("Index", "Home");
     }
 
     //Deleted
@@ -183,13 +151,7 @@ public class TablesController : Controller
         _context.Tickets.Remove(subject);
         await _context.SaveChangesAsync();
 
-        return RedirectToAction("Basic" ,"Tables");
+        return RedirectToAction("Basic", "Tables");
     }
-
-
-
-
-
-
-
 }
+
