@@ -7,6 +7,7 @@ namespace AspnetCoreMvcFull.Models.Entities
         [Key]
         public int CustomerId { get; set; }
         public required string Customtype { get; set; }
+       
         public string CustomDescription { get; set; }
     }
 }

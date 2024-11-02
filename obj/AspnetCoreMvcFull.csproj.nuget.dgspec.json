@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "D:\\my project\\Ticket-management-System\\AspnetCoreMvcFull.csproj": {}
   },
   "projects": {
@@ -15,6 +16,22 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\wiilq\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+    "C:\\Users\\KCT\\OneDrive\\Desktop\\Tick\\Ticket-management-System\\Ticket-management-System\\AspnetCoreMvcFull.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\KCT\\OneDrive\\Desktop\\Tick\\Ticket-management-System\\Ticket-management-System\\AspnetCoreMvcFull.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\KCT\\OneDrive\\Desktop\\Tick\\Ticket-management-System\\Ticket-management-System\\AspnetCoreMvcFull.csproj",
+        "projectName": "AspnetCoreMvcFull",
+        "projectPath": "C:\\Users\\KCT\\OneDrive\\Desktop\\Tick\\Ticket-management-System\\Ticket-management-System\\AspnetCoreMvcFull.csproj",
+        "packagesPath": "C:\\Users\\KCT\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KCT\\OneDrive\\Desktop\\Tick\\Ticket-management-System\\Ticket-management-System\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KCT\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> abbe7ba2ec80a1c1e6687c818921ddd2556430d4
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
